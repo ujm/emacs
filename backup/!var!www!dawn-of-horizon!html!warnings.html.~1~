@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link type="text/css" href="css/style.css" rel="stylesheet">
+    <title>No Limit</title>
+  </head>
+  <body>
+    <h1>No Limit</h1>
+    <nav>
+      <ul>
+	<li><a href="kantaiotome.html">艦隊乙女</a></li>
+	<li><a href="akatsukinosuiheisenni.html">暁の水平線に</a></li>
+	<li><a href="kashi3.html">歌詞3</a></li>
+	<li><a href="kashi4.html">歌詞4</a></li>
+	<li><a href="kashi5.html">歌詞5</a></li>
+      </ul>
+    </nav> 
+  </body>
+</html>

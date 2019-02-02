@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link type="text/css" href="css/style.css" rel="stylesheet">
+    <title>No Limit</title>
+  </head>
+  <body>
+    <h1>No Limit</h1>
+    <nav>
+      <ul>
+	<li>艦隊乙女</li>
+	<li id="selected"><a href="kashi2.html">歌詞2</a></li>
+	<li><a href="kashi3.html">歌詞3</a></li>
+	<li><a href="kashi4.html">歌詞4</a></li>
+	<li><a href="kashi5.html">歌詞5</a></li>
+      </ul>
+    </nav> 
+    <article id="content">
+あの海の向うへ<br />
+栄光の日　私の想い<br />
+刻むの　暁の海に<br />
+在りし日　懐かしい笑顏に<br />
+決意と驕り　嘆きの海<br />
+空の向う　睨んで<br />
+顏を上げて　風上へ<br />
+磨いた腕　集う　輝く翼達<br />
+今こそ放つ<br />
+全機　攻撃隊発艦！<br />
+九七の希望　力よ<br />
+輪廻の零<br />
+解き放つの未來へと<br />
+九九の願望想いよ<br />
+いつまでも どこまでも<br />
+輝いて貫いて　さあ<br />
+受け継いだ翼確かめ<br />
+支えるのこの海　力の限り<br />
+どうして　まだ足りないの？<br />
+そんな修辭疑問はいらないわ<br />
+鶴のように　気高く<br />
+やるわ　全てを賭けて<br />
+遠く空を　睨んで<br />
+暁の向う　彼方に<br />
+今放つの　渾身の矢を　願い屆いて<br />
+一航戦<br />
+攻撃隊　発艦始め！<br />
+彗星のように瞬くの　私達<br />
+零の追憶<br />
+くぐり抜けて　過去を　未來へと<br />
+哀しみを今翔び越えて行く<br />
+虹かかる　天山<br />
+輝くのあの流星達のように<br />
+九七の希望　力よ<br />
+いつまでもどこまでも<br />
+九九の願望　想いよ<br />
+輪廻の零<br />
+解き放つの　未來へと<br />
+烈風を巻き起こして<br />
+突き進め<br />
+いつまでもどこまでも<br />
+暁の約束を　今<br />
+    </article>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+#!/bin/perl
+
+use strict;
+use LWP::UserAgent;
+
+my $ua = LWP::UserAgent->new;
+my $count = 1;
+my $dir = 'img/';
+
+while(<>) {
+  chomp();
+  my $url = $_;
+  $url =~ /(\..*)/;
+  print "$1\n";
+}
+
+=pod
+  my $request = $ua->get($url);
+  if($request->is_success) {
+    open(OUT, ">$dir$count.gif");
+    print OUT $request->content;
+    close(OUT);
+    print "$url:OK" . "\n";
+  } else {
+    print "$url:NG" . "\n";
+    die $request->status_line;
+  }
+  $count++;
+}
+=cut

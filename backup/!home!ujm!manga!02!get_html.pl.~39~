@@ -1,0 +1,37 @@
+#!/bin/perl
+
+use strict;
+use LWP::UserAgent;
+use HTML::TreeBuilder;
+use File::Basename;
+
+my $ua = LWP::UserAgent->new;
+my $url = "https://momon-ga.com/archives/27737977.html";
+my $count = 1;
+my $request = $ua->get($url);
+
+if($request->is_success) {
+  open(OUT, ">$count.html");
+  print OUT $request->content;
+  close(OUT);
+} else {
+  print NG;
+}
+
+my $tree = new HTML::TreeBuilder;
+$tree->parse_file( "$count.html" );
+$tree->eof();
+
+foreach my $contents ($tree->find('a')) {
+  my $url = $contents->attr('href');
+
+  my $prefix = substr($url, -3);
+  my $img = $ua->get($url);
+  my $file_name = basename($url);
+
+    open(OUT, ">img/$file_name");
+    print OUT $img->content;
+    close(OUT);
+  $count++;
+}
+

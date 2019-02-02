@@ -1,0 +1,32 @@
+<?php
+
+function roll () {
+    return mt_rand(1,6);
+}
+
+$rules = array(
+    'health' => '36',
+    'gore' => 'health/6',
+    'clutch' => '1d6',
+    'brawn' => '1d6',
+    'sense' => '1d6',
+    'flail' => '1d6',
+    'chuck' => '1d6',
+    'lurch' => '1d6',
+);
+
+foreach($rules as $stat => $rule) {
+    if(preg_match("/^[0-9]+$/", $rule)) {
+        $character[$stat] = $rule;
+    } else if (preg_match("/^([0-9]+)d([0-9]+)/", $rule, $matches)) {
+        $val = 0;
+        for($n = 0; $n < $matches[1]; $n++) {
+            $val = $val + roll($matches[2]);
+            print_r($matches);
+        }
+        $character[$stat] = $val;
+    } else if (preg_match("/^([a-z]+)\/([0-9]+)$/", $rule, $matches)) {
+        $character[$stat] = $character[$matches[1]] / $matches[2];
+    }
+    echo $stat . ' : ' . $character[$stat] . "<br />\n";
+}

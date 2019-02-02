@@ -1,0 +1,14 @@
+<?php
+
+$db_server = 'localhost';
+$db_database = 'cooking';
+$db_user = 'root';
+$db_password = '';
+
+$pdo = new PDO("mysql:host=$db_server;dbname=$db_database;charaset=utf8;", $db_user, $db_password);
+
+$sql = 'select * from cooking';
+
+foreach($pdo->query($sql) as $row) {
+print($row['name']) . "<br />";
+}

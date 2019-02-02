@@ -1,0 +1,161 @@
+var canvas;
+var ctx;
+var WIDTH = 400;
+var HEIGHT = 400;
+
+var fps = 30;
+var mych;
+var enmy;
+
+var shotProcess;
+var timeCount=0;
+var shotCount = 0;
+var shotCheck = 0;
+
+
+var bullets;
+
+var eMoveX=2;
+
+window.onload = function() {
+    init();
+};
+
+
+
+
+//初期化処理
+function init() {
+
+    canvas = document.getElementById("canvas");
+    ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth = WIDTH;
+    canvas.height = window.innerHeight = HEIGHT;
+    canvas.onmousemove = onMouseMove;
+    
+    shotProcess = new shot();
+    bullets = [];
+    
+    function  chara(){
+        this.x = canvas.width / 2,
+        this.y = canvas.height / 4 * 3,
+        this.image =new Image();
+        this.image.src = "http://jsrun.it/assets/h/U/8/l/hU8lU.png";
+    }
+    
+    mych = new chara();
+    enmy = new chara();
+    enmy.y = canvas.height / 4;
+    enmy.image.src = "http://jsrun.it/assets/A/5/2/Y/A52Yb.png";
+    
+    var timer = setInterval(onEnterFrame, 1000/fps);
+
+}
+
+//フレーム毎の繰り返し
+function onEnterFrame() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+    ctx.drawImage(enmy.image, enmy.x-40, enmy.y-60);  
+    ctx.drawImage(mych.image, mych.x-15, mych.y-15);
+    
+    shotProcess.moveShot();
+    enmyMove();
+}
+
+function enmyMove(){
+    
+    enmy.x+=eMoveX;
+    if(enmy.x < 100||enmy.x > 300){
+        eMoveX=eMoveX*(-1);
+    }
+    
+    
+}
+
+//弾の処理
+
+function shot(){
+
+    this.moveShot = function(){
+        timeCount++;
+        
+        
+            switch (shotCheck) {
+              case 0:
+                    if(timeCount >= 3){
+                       timeCount = 0;
+                       shotCount ++;
+                       
+                       bullets.push(new snipeShot(enmy.x,enmy.y));
+                       document.getElementById('bag').innerHTML="狙い撃ち弾";
+                        
+                       }
+                      break;
+
+
+              default : break;
+            }
+        
+        for(var o=0; o<bullets.length; o++) {
+            
+            var b = bullets[o];
+            b.move();
+            drowShot(b.x,b.y);
+            
+            if((b.x<-200)||(b.x>WIDTH+200)||(b.y<-200)||(b.y>HEIGHT+200)){
+                bullets.splice(o, 1);        
+                
+            }
+        
+        
+        }
+    
+    };
+}
+
+function drowShot(x,y){
+        
+        ctx.fillStyle = "rgb(255, 255, 255)";
+        ctx.strokeStyle = "rgb(0, 100, 150)";
+        ctx.beginPath();
+        ctx.arc(x, y, 10, 0, Math.PI*3.5, false);
+        ctx.fill();
+        ctx.stroke();
+    
+}
+
+//狙い撃ち弾
+function snipeShot(x,y){
+  
+    this.x = x;
+    this.y = y;
+    
+    var d = sqd(mych.x,mych.y,x,y);
+    
+    var vx= (mych.x -this.x )/d*5;
+    var vy= (mych.y -this.y )/d*5;
+        
+    this.move= function() {
+        this.x += vx;
+        this.y += vy;
+    };
+
+}
+
+function sqd(x,y,ex,ey){
+    return Math.sqrt((x-ex)*(x-ex)+(y-ey)*(y-ey));
+
+}
+
+function rad(r){
+    return Math.PI/180*r;
+}
+//マウスイベント
+function onMouseMove(e) {
+    var rect = e.target.getBoundingClientRect();
+    mych.x = e.clientX - rect.left;
+    mych.y = e.clientY - rect.top;
+}
+
+

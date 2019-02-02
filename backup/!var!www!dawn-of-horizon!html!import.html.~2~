@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link type="text/css" href="css/style.css" rel="stylesheet">
+    <link rel="import" href="index.html">
+    <title>No Limit</title>
+  </head>
+  <body>
+    <h1>No Limit</h1>
+    
+    <script>
+      var link = document.querySelector('link[rel="import"]');
+      var content = link.import;
+
+      // warning.html のドキュメントから DOM を取得
+      var el = content.querySelector('.warning');
+
+      document.body.appendChild(el.cloneNode(true));
+    </script>
+
+  </body>
+</html>

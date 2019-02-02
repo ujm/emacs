@@ -1,0 +1,31 @@
+body {
+    width: 750px;
+    background-color: #c0c0c0;
+}
+
+#nav {
+    float: left;
+    width: 200px;
+}
+
+#nav ul {
+    list-style: none;
+}
+
+#nav li {
+    padding: 2px 0;
+}
+
+#nav a {
+    text-decoration: none;
+}
+
+#content {
+    float: right;
+    width: 500px;
+}
+
+h1 {
+    padding: 0 40px;
+    
+}

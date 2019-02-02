@@ -1,0 +1,10 @@
+#!/bin/perl
+
+use strict;
+
+while(<>) {
+  chomp;
+  $_ =~ /(href.*jpg)/;
+  print "$1\n";
+  exit;
+}

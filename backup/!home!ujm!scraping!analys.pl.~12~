@@ -1,0 +1,11 @@
+#!/usr/bin/perl
+
+while (<>) {
+    chomp;
+    my $data = $_;
+    @data = split(/\t/, $data);
+#    $name = shift @data;
+    $value = shift @data;
+
+    print $name . ' ' . $value . "\n";
+}

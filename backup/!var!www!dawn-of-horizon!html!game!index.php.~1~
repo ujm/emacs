@@ -1,0 +1,7 @@
+<?php>
+
+function roll () {
+    return mt_rand(1,6);
+}
+
+echo roll();

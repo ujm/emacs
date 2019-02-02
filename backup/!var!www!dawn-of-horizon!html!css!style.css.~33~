@@ -1,0 +1,38 @@
+body {
+    width: 750px;
+    background-color: #c0c0c0;
+}
+
+#nav {
+    float: left;
+    width: 200px;
+}
+
+#nav ul {
+    list-style: none;
+}
+
+#nav li {
+    padding: 2px 0;
+}
+
+#nav a {
+    text-decoration: none;
+}
+
+#center_border {
+    float: left;
+    background: none repeat scroll 0 0 #666666;
+    box-shadow: 1px 0 #E6E6E6;
+    width: 1px;
+}
+
+#content {
+    float: right;
+    width: 500px;
+}
+
+h1 {
+    padding: 0 40px;
+    
+}

@@ -1,0 +1,8 @@
+<?php
+
+$db_server = 'localhost';
+$db_database = 'blog';
+$db_user = 'root';
+$db_password = '';
+
+$pdo = 'mysql:db_server,'

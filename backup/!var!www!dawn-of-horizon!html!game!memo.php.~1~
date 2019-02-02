@@ -1,0 +1,10 @@
+<html>
+<head>
+</head>
+<body>
+<p>こんにちは</p><br />
+</body>
+</html>
+<?php
+
+echo 'hi' . "<br />";

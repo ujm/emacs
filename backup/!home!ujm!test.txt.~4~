@@ -1,0 +1,8 @@
+goto@broadtech.co.jp
+goto@broadtech.co.jp(fset 'mailaddress
+   (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ("goto@broadtech.co.jp" 0 "%d")) arg)))
+
+
+
+
+

@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+  /*
+  int ninzuu;
+
+  printf("ゲームに参加する人数を入力してください:");
+  scanf("%d", &ninzuu);
+
+  if (ninzuu >= 3 || ninzuu <= 100) {
+    
+  }
+  */
+
+  /*
+  // 順番に足し算をする式
+  int i;
+  double x;
+
+  for (i = 1; i <= 100; i++) {
+    x += i * (3.0/4.0);
+  }
+  printf("%f\n", x);
+  */
+
+  int i;
+  double b = 0.0;
+
+  for (i = 1; i <= 10; i++) {
+    //double a = pow(2.0, b);
+    printf("%d:%f\n",i, b);
+    ++b;
+  }
+}
+
+

@@ -1,0 +1,95 @@
+/**
+ * Shooting Sample
+ * created by @hecomi
+ * web: http://d.hatena.ne.jp/hecomi/
+ */
+
+$(function(){
+
+/* ------------------------------------------------------------------------- */
+//  Global Parameters
+/* ------------------------------------------------------------------------- */
+const FPS    = 30;
+const WIDTH  = 640;
+const HEIGHT = 480;
+
+/* ------------------------------------------------------------------------- */
+//  Mover
+/* ------------------------------------------------------------------------- */
+var Mover = function(mover) {
+    this.x     = ('x'  in mover) ? mover.x  : 0;
+    this.y     = ('y'  in mover) ? mover.y  : 0;
+    this.vx    = ('vx' in mover) ? mover.vx : 0;
+    this.vy    = ('vy' in mover) ? mover.vy : 3;
+    this.w     = ('w'  in mover) ? mover.w  : 10;
+    this.h     = ('h'  in mover) ? mover.h  : 10;
+    this.cnt   = 0;
+    this.flag  = true;
+};
+
+Mover.prototype = {
+    move : function() {
+	this.x += this.vx;
+	this.y += this.vy;
+	++this.cnt;
+	},
+    draw : function() {
+	$("#canvas").drawEllipse({
+	    x         : this.x,
+	    y         : this.y,
+	    width     : this.w,
+	    height    : this.h,
+	    fillStyle : '#fff',
+	    });
+	},
+};
+
+/* ------------------------------------------------------------------------- */
+//  Canvas
+/* ------------------------------------------------------------------------- */
+var Canvas = {
+    resize : function() {
+	var wRate = $(window).width()  / WIDTH;
+	var hRate = $(window).height() / HEIGHT;
+	var rate = Math.min(wRate, hRate);
+
+	$('#canvas').css({
+	    width  : WIDTH  * rate,
+	    height : HEIGHT * rate,
+	    });
+	},
+    clear  : function() {
+	$('#canvas').clearCanvas();
+	},
+};
+
+/* ------------------------------------------------------------------------- */
+//  OnLoad
+/* ------------------------------------------------------------------------- */
+$(window).bind({
+    resize : Canvas.resize
+});
+Canvas.resize();
+main();
+
+/* ------------------------------------------------------------------------- */
+//  Main
+/* ------------------------------------------------------------------------- */
+function main() {
+    var mover = new Mover({
+	x  : WIDTH/2,
+	y  : HEIGHT/2,
+	w  : 10,
+	h  : 10,
+	vx : 1,
+	vy : 3,
+	});
+
+    setInterval(function(){
+	mover.move();
+	Canvas.clear();
+	mover.draw();
+	}, 1000/FPS);
+}
+
+});

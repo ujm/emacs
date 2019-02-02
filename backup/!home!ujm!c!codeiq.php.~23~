@@ -1,0 +1,38 @@
+<?php
+
+//while($line=fgets(STDIN)){
+
+// 何通りのやり方があるか計算
+//    $input = $line;
+    $input = 3;
+    $ways = 1;
+
+    for ($i = 1; $i <= $input; $i++) {
+        $ways *= 2;
+    }
+
+echo '全ての通り:' . $ways . "\n";
+
+// 1名のみ勝利する確率
+    $one_winner = $ways - 2;
+
+echo '1名のみ勝利する確率:' . $one_winner . "\n";
+
+    $bunshi = $ways - $one_winner;
+
+echo '分子:' . $bunshi . "\n";
+
+    $pow = $bunshi / $ways;
+
+echo 'ゲームが終了する確率:' . $pow . "\n";
+
+    $a = 0;
+    $a += ((1 * ($one_winner / $ways)));
+    echo '1回目:' . $a . "\n";
+    for ($i = 2; $i <= 100; $i++) {
+        $a += (($i * $pow * ($one_winner / $ways)));
+        echo "$i * $pow * ($one_winner / $ways ) = " . $a . "\n";
+        $pow *= $bunshi / $ways;
+    }
+//echo strtoupper(rtrim($a)).PHP_EOL;
+//}

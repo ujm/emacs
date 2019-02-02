@@ -1,0 +1,37 @@
+#!/usr/bin/perl
+
+use strict;
+use LWP::UserAgent;
+use HTML::TreeBuilder;
+
+my $ua = LWP::UserAgent->new;
+my $url = "https://mercury.bbspink.com/test/read.cgi/swimsuit/1531221150/";
+my $count = 1;
+my $request = $ua->get($url);
+
+if($request->is_success) {
+    open(OUT, ">$count.html");
+    print OUT $request->content;
+    close(OUT);
+  } else {
+    print NG;
+  }
+
+my $tree = new HTML::TreeBuilder;
+$tree->parse_file( "$count.html" );
+$tree->eof();
+
+foreach my $contents ($tree->find('a')) {
+    my $url = $contents->attr('href');
+    my $prefix = substr($url, -3);
+    if($prefix eq 'jpg') {
+      $url =~ s/.*http/http/;
+      print $url . "\n";
+    }
+    my $img = $ua->get($url);
+
+    open(OUT, ">img/$count.$prefix");
+    print OUT $img->content;
+    close(OUT);
+    $count++;
+  }

@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <SDL2.h>
+
+int main() {
+  printf("SDLの初期化をしています。\n");
+
+  if (SDL_Init(SDL_INIT_VIDEO|SDL_AUDIO) == -1) {
+    printf("SDLの初期化が出来ませんでした: %s.\n", SDL_GetError());
+    exit(-1);
+  }
+
+  printf("SDLの初期化が完了しました。\n");
+
+  printf("SDLを終了しています。\n");
+
+  SDL_Quit();
+
+  printf("終了します....\n");
+
+  exit(0);
+}

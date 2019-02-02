@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <title>getElement</title>
+    <head>
+      <script>
+	function changeColor(newColor) {
+	var elem = document.getElementById('para');
+	elem.style.color = newColor;
+	}
+      </script>
+
+    </head>
+    <body>
+	<p id="para"></p>
+	<button onclick="changeColor('blue');"></button>
+	<button onclick="changeColor('red');"></button>
+    </body>
+</html>

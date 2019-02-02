@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link type="text/css" href="css/style.css" rel="stylesheet">
+    <title>No Limit</title>
+  </head>
+  <body>
+    <h1>No Limit</h1>
+    <div id="nav">
+      <!--#include virtual="nav.html" -->
+    </div>
+    <div id="center_border" style="height: 393px;"></div>
+    <div id="content">
+      <h2></h2>
+      作詞：<br />
+      編曲：<br />
+      アレンジ原曲：<br />
+      <br />
+    </div>
+  </body>
+</html>

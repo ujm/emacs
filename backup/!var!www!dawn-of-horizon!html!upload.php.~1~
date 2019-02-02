@@ -1,0 +1,4 @@
+<?php
+$file_name = $_FILES['upfile']['name'];
+
+echo $file_name;

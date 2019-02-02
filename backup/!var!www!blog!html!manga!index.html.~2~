@@ -1,0 +1,13 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <a href="manga1.php">1</a><br />
+    <a href="manga2.php">2</a><br />
+    <a href="manga3.php">3</a><br />
+    <a href="manga4.php">4</a><br />
+    <a href="manga5.php">5</a><br />
+    <a href="manga6.php">6</a><br />
+    <a href="manga7.php">7</a><br />
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<?php
+
+//while($line=fgets(STDIN)){
+
+// 何通りのやり方があるか計算
+//    $input = $line;
+    $input = 51;
+
+    $ways = 1;
+
+    for ($i = 1; $i <= $input; $i++) {
+        $ways *= 2;
+    }
+
+// 1名のみ勝利する確率
+    $one_winner = $ways - 2;
+
+// 最大公約数を求める
+    $gcd = gmp_gcd($ways, $one_winner);
+    $gcd = gmp_strval($gcd);
+    $ways = $ways / $gcd;
+    $one_winner = $one_winner / $gcd;
+    $bunshi = $ways - $one_winner;
+
+    $pow = $bunshi / $ways;
+    $a = 0;
+    $a +=1000000 * ((1 * ($one_winner / $ways)));
+
+    for ($i = 2; $i <= 100; $i++) {
+        $a += 1000000 * ((($i * $pow * ($one_winner/$ways))));
+        $pow *= $bunshi / $ways;
+    }
+echo $a . "\n";
+//    echo strtoupper(rtrim($a)).PHP_EOL;
+//}

@@ -1,0 +1,6 @@
+#!/bin/perl
+
+use strict;
+use Net::Ping;
+
+print "test";

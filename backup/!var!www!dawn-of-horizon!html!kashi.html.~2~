@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link type="text/css" href="css/style.css" rel="stylesheet">
+<title>No Limit</title>
+</head>
+<body>
+  <div class="title">
+    <p>No Limit</p>
+  </div>
+  <div>
+    <h1>
+      <span class="font_h1">艦隊乙女</span><br />
+      
+    </h1>
+  </div>
+</body>
+</html>

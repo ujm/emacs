@@ -1,0 +1,9 @@
+<!DOCUMENT html>
+<html>
+	<head></head>
+<body>
+	<script>
+		document.getElementByID("demo").innerHTML = 5 + 6;
+	</script>
+</body>
+</html>

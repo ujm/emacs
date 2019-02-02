@@ -1,0 +1,21 @@
+<?php
+//$input_lines = explode(' ', trim(fgets(STDIN)));
+//$henkou_mae = trim(fgets(STDIN));
+//$henkou_ato = trim(fgets(STDIN));
+
+$henkou_mae = 'paiza';
+$henkou_ato = 'pizza';
+
+$henkou_mae = str_split($henkou_mae);
+$henkou_ato = str_split($henkou_ato);
+
+$henkou_mae = array_count_values($henkou_mae);
+$henkou_ato = array_count_values($henkou_ato);
+
+foreach($henkou_mae as $key => $val) {
+    echo $key . '=' . $val . "\n";
+}
+
+foreach($henkou_ato as $key => $val) {
+    echo $key . '=' . $val . "\n";
+}

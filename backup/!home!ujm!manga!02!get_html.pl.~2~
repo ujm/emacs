@@ -1,0 +1,14 @@
+#!/bin/perl
+
+use strict;
+use LWP::UserAgent;
+
+my $ua = LWP::UserAgent->new;
+my $url = "https://momon-ga.com/";
+my $request = $ua->get($url);
+
+if($request->is_success) {
+  print "$request\n";
+} else {
+  die $request->status_line;
+}

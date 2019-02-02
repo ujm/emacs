@@ -1,0 +1,22 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import scrapy
+
+class BlogSpider(scrapy.Spider):
+    name = 'blogspider'
+    start_urls = ['http://gigazine.net/']
+
+    data_dir = '/tmp/photos/'
+
+    def parse(self, response):
+        for href in response.css('.content .card'):
+            yield { 'URL' : href.css('.thumb > a::text').extract_first() }
+                    
+#    def parse_item(self, response):
+#        file_name = '{0}{1}'.format(self.data_dir, response.url.split('/')[-1])
+
+#        print(file_name)
+#        f = open(file_name, 'w')
+#        f.write(response.body)
+#        f.close()

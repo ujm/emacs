@@ -1,0 +1,10 @@
+#!/bin/perl
+
+use strict;
+use LWP::Simple;
+
+my $url = 'https://google.com';
+
+my $content = get $url;
+
+print $content . "/n";

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link type="text/css" href="css/style.css" rel="stylesheet">
+    <title>No Limit</title>
+  </head>
+  <body>
+    <h1>No Limit</h1>
+    <div id="nav">
+      <!--#include virtual="nav.html" -->
+    </div>
+    <div id="content">
+      <h2>銃爆</h2>
+      作詞：Tom<br />
+      編曲：Tom<br />
+      アレンジ原曲：<br />
+      <br />
+      暁に染め上げられた　海と空の境界線<br />
+      最愛の君は微笑って　水面に滲んでく<br />
+      握りしめた掌から　また一つ暖かい色が零れ落ち<br />
+      涙こらえ君に別れ告げ　ボロボロの体を引きずって明日へ走りだす<br />
+      愛に銃爆　撃ち鳴らして<br />
+      君がくれたもの　心に刻んで<br />
+      I need you back　繋いでくから<br />
+      見守ってて…<br />
+      幾度とない追撃を逃れ　時には仲間に助けられて<br />
+      果てしない旅路を急ぐ　辛く険しいけど<br />
+      鉄の雨に身を焦がして　矢尽き刀折れても決して諦めず<br />
+      足が止まり動けなくなっても　夢見た場所に思い馳せらせ笑顔絶やさない<br />
+      愛に銃爆　撃ち鳴らして<br />
+      咲き誇るように　火花を散らして<br />
+      I need you back　繋ぎたかったな<br />
+      約束の場所まで<br />
+      I got lonely　もう疲れたな…<br />
+      哀が論理を突き付ける…<br />
+      深い水底へ…<br />
+      愛に銃爆　撃ち鳴らして<br />
+      君がくれたもの　心に刻んで<br />
+      I need you back　繋いでくから<br />
+      約束の場所まで　この想いをのせて<br />
+    </div>
+  </body>
+</html>

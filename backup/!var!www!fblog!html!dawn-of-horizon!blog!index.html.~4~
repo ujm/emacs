@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link type="text/css" href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+  <div class="form">
+    <form action="form.php" method="post">
+      <div id="form_field-1">
+	<label for="form_title">タイトル</label>
+      <input id="form_title" type="text" name="title">
+      </div>
+      <div id="form_field-2">
+	<label for="form_main">本文</label>
+	<textarea id="form_main" name="main" rows="10" cols="30"></textarea>
+      </div>
+      <div id="form_field-3">
+	<input id="form_submit" type="submit" value="保存">
+      </div>
+    </form>
+    </div>
+</body>
+</html>

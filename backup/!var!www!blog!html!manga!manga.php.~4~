@@ -1,0 +1,9 @@
+<?php
+
+for ($i = 1; $i <= 20; $i++) {
+#    echo "<img border='1' src='img/01/$i.jpg'></img><br />";
+    echo "<a href='img/01/$i.jpg'>$i.jpg</a><br />";
+    echo "<a href='img/02/$i.jpg'>$i.jpg</a><br />";
+#    echo $i;
+}
+

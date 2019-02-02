@@ -1,0 +1,53 @@
+<?php
+/*
+function roll () {
+    return mt_rand(1,6);
+}
+
+$weapons = array (
+    'littlestick' => array(
+        'name' => 'Little Stick',
+        'roll' => '1d6',
+        'bonus' => '0',
+    ),
+    'bigstick' => array(
+        'name' => 'Big Stick',
+        'roll' => '1d6',
+        'bonus' => '4',
+    ),
+    'chainsaw' => array(
+        'name' => 'Chainsaw',
+        'roll' => '2d8',
+        'bonus' => '0',
+    ),
+);
+
+foreach($weapons as $weapon) {
+    list($count, $sides) = explode('d', $weapon['roll']);
+    $result = 0;
+    for($i = 0; $i < $count; $i++) {
+        $result = $result + roll($sides);
+    }
+    echo 'name:' . $weapon['name'] . ' ' . $weapon['roll'];
+    if($weapon['bonus'] > 0) {
+        echo "+" . $weapon['bonus'];
+        $result = $result + $weapon['bonus'];
+    }
+    echo ' damage:' . $result . "\n";
+}
+*/
+$character = array(
+    'name' => 'Fred The Zombie',
+    'health' => '36',
+    'gore' => '1',
+    'clutch' => '5',
+    'brawn' => '6',
+    'sense' => '4',
+    'flail' => '2',
+    'chuck' => '3',
+    'lurch' => '4',
+);
+
+$filename = substr(preg_replace("/[^a-z0-9]/", "", strtolower($character['name'])), 0, 20);
+echo $filename . "\n";
+file_put_contents($filename, serializ($character));

@@ -1,0 +1,7 @@
+function init() {
+    canvas = Document.getElementById("canvs");
+    context = canvas.getContext("2d");
+
+    shotProcess = new shot();
+    bullets = [];
+}

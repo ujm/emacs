@@ -1,0 +1,15 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import scrapy
+from scrapy.http import Request
+
+class BlogSpider(scrapy.Spider):
+    name = 'blogspider'
+    start_urls = ['http://www.4gamer.net/']
+
+    def parse(self, response):
+        for title in response.css('div.V2_article_container'):
+            yield {
+                'タイトル': title.css('h2 a::text').extract_first()
+            }

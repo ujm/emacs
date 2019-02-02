@@ -1,0 +1,21 @@
+#!/usr/bin/perl
+
+use strict;
+use IO::Socket;
+
+
+my $sock = new IO::Socket::INET(PeerAddr=>'www.google.co.jp',
+			     PeerPort=>80,
+			     Proto=>'tcp');
+
+die "IO::Socket : $!" unless $sock;
+
+if ($sock) {
+    print "接続出来ました\n";
+}
+
+print $sock;
+
+close($sock);
+
+exit;

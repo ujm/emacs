@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <script>
+	
+      </script>
+    </head>
+    <body>
+	<p id="para"></p>
+	<button onclick="changeColor('blue');"></button>
+	button onclick="changeColor('red');"</button>
+    </body>
+</html>

@@ -1,0 +1,6 @@
+<?php
+
+for ($i = 1; $i <= 108; $i++) {
+    echo "<img border='1' src='img/14/$i.jpg'></img><br />";
+    echo $i;
+}

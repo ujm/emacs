@@ -1,0 +1,6 @@
+<?php
+
+for ($i = 1; $i <= 47; $i++) {
+    echo "<img border='1' src='img/03/$i.gif'></img><br />";
+    echo $i;
+}

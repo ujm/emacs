@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main() {
+  char moji;
+
+  printf("文字を入力してください:");
+  scanf("%c", &moji);
+
+  if (moji >= 'A' && moji <= 'Z') {
+    moji = moji + ('a' - 'A');
+  }
+  printf("moji = %c\n", moji);
+
+  return 0;
+}

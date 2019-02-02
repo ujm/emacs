@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int test(int test);
+
+int main(void) {
+  char a;
+  a = 'a';
+  printf("%d\n", test(a));
+  printf("%d\n", a);
+  printf("%c\n", 'a' + 3);
+
+  exit(0);
+  return 0;
+}
+
+int test(int test) {
+  return test;
+}

@@ -1,0 +1,15 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use IO::Socket;
+
+$sock = new IO::Socket::INET(PeerAddr=>'http://www.yahoo.co.jp/',
+	PeerPort=>80,
+	Proto=>'tcp');
+
+die "IO::Socket : $!" unless $sock;
+
+print <$sock>;
+close($sock);
+

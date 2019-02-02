@@ -1,0 +1,16 @@
+#!/usr/lib/perl
+
+use strict;
+use LWP::UserAgent;
+use HTML::TreeBuilder;
+use Data::Dumper;
+
+my $url = "http://finance.yahoo.co.jp/";
+
+my $ua = LWP::UserAgent->new();
+my $res = $ua->get($url);
+
+if ($res->is_success) {
+    my $content = $res->content;
+    
+}

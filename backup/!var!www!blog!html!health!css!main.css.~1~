@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+body {
+    width:auto;
+}
+
+p {
+  width: 2em;
+  height: 2em;
+  background: orange
+}
+
+#link {
+    font-size:5em;
+    text-align:center;
+}

@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <div id="link">
+      <a href="manga1.php">1</a><br />
+      <a href="manga2.php">2</a><br />
+      <a href="manga3.php">3</a><br />
+      <a href="manga4.php">4</a><br />
+      <a href="manga5.php">5</a><br />
+      <a href="manga6.php">6</a><br />
+      <a href="manga7.php">7</a><br />
+      <a href="manga9.php">9</a><br />
+      <a href="manga10.php">10</a><br />
+      <a href="manga11.php">11</a><br />
+      <a href="manga12.php">12</a><br />
+      <a href="manga13.php">13</a><br />
+      <a href="manga14.php">14</a><br />
+      <a href="manga15.php">15</a><br />
+      <a href="manga16.php">16</a><br />
+      <a href="manga17.php">17</a><br />
+      <a href="manga18.php">18</a><br />
+    </div>
+  </body>
+</html>

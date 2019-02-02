@@ -1,0 +1,15 @@
+#!/usr/lib/env python
+# -*- coding: utf-8 -*-
+
+import requests
+import lxml.html
+
+r = requests.get("http://www.shoeisha.co.jp/book/detail/9784798146072")
+
+html = r.text
+
+root = lxml.html.fromstring(html)
+
+titleH1 = root.xpath("/html/body/div[1]/section/h1")
+
+print(titleH1[0].text)

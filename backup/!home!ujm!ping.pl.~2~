@@ -1,0 +1,7 @@
+#!/bin/perl
+
+use strict;
+use Net::Ping;
+
+my $p = Net::Ping->new;
+

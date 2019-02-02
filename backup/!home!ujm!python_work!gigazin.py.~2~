@@ -1,0 +1,22 @@
+#!/usr/lib/env python
+# -*- coding: utf-8 -*-
+
+import requests
+import lxml.html
+
+r = requests.get("https://www.gamespark.jp/")
+
+html = r.text
+
+root = lxml.html.fromstring(html)
+
+qaA = root.cssselect("body > div.thm-body.cf > main > section.main-news > div > section > a")
+qaH3 = root.cssselect("body > div.thm-body.cf > main > section.main-news > div > section > div > h3")
+
+
+def h3Tag(qaH3):
+for h3Tag in qaH3:
+    print(h3Tag.text)
+    print('----------------------------------------------')
+
+h3Tag(qaH3)

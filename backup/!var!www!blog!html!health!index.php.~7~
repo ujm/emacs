@@ -1,0 +1,13 @@
+<?php
+
+$dsn = 'mysql:dbname=health;host=localhost;charset=utf8';
+$username = 'root';
+$password = '';
+
+$pdo = new PDO($dsn, $username, $password);
+
+$test = $pdo->query('select * from test');
+
+foreach($test as $value) {
+    echo $value[1];
+}

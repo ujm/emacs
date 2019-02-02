@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+  int a, b;
+
+  printf("数値Aを入力してください:");
+  scanf("%d", &a);
+  //  printf("数値Bを入力してください:");
+  scanf("%d", &b);
+
+  if (a > 10) {
+    printf("aは10より大きい\n");
+  } else if (a == 10) {
+    printf("aはちょうど10です。\n");
+  } else {
+    printf("aは10以下\n");
+  }
+
+  if (a == b) {
+    printf("aとbは等しい。\n");
+  } else if (b >= 10) {
+    printf("bは10以上。\n");
+  } else {
+    printf("bは10より小さい。\n");
+  }
+
+  printf("a = %d\n", a);
+  printf("b = %d\n", b);
+
+  return 0;
+}

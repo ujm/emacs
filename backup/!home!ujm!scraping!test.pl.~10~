@@ -1,0 +1,12 @@
+#!/usr/bin/perl
+
+use strict;
+
+my @array = ('東京', '大阪');
+
+print shift @array;
+
+print "ここから下は配列に残ってるデータ\n";
+foreach my $array (@array) {
+    print $array . "\n";
+}

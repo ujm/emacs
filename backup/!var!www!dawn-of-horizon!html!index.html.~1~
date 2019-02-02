@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link type="text/css" href="css/style.css" rel="stylesheet">
+<title>暁の水平線</title>
+</head>
+<body>
+  <div class="main">
+    <h1>
+      <span class="font_h1">2015/01/23</span>
+    </h1>
+    <h2>test</h2>
+  </div>
+</body>
+</html>

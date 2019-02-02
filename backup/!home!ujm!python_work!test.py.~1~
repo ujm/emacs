@@ -1,0 +1,5 @@
+#!/usr/lib/env python
+# -*- coding: utf-8 -*-
+
+print('Hello, World!!')
+print('ヘローワールド！！')

@@ -1,0 +1,20 @@
+#!/usr/bin/perl
+
+use strict;
+use LWP::UserAgent;
+
+while(<>) {
+  chomp;
+  my $url = $_;
+  my $ua = 'Mozilla/5.0 (compatible; Dataprovider.com;)';
+  my $timeout = '10';
+
+  my $lwp = LWP::UserAgent->new( agent => $ua, timeout => $timeout );
+  my $res = $lwp->get( $url, ':content_file' => $file );
+
+  if ( $res->is_success ) {
+    print "success\n";
+  } else {
+    print "error\n";
+  }
+}

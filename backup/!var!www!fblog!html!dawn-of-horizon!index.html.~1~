@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link type="text/css" href="css/style.css" rel="stylesheet">
+    <title>No Limit</title>
+  </head>
+  <body>
+    <h1>No Limit</h1>
+    <div id="nav">
+      <ul>
+	<li><a href="/kashi.html">歌詞一覧</a></li>
+	<li><a href="/rss/4gamer-rss.php">4gamer</a></li>
+	<li><a href="/rss/gamespark-rss.php">gamespark</a></li>
+	<li><a href="/rss/app-famitsu-rss.php">ファミ通app</a></li>
+      </ul>
+    </div>
+    <div id="center_border"></div>
+    <div id="content">
+      <p>ご意見やページの削除依頼は ujm.nanoha@gmail.com へメールでお問い合わせください。</p>
+    </div>
+  </body>
+</html>

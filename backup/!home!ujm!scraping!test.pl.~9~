@@ -1,0 +1,12 @@
+#!/usr/bin/perl
+
+use strict;
+
+my @array = ('東京', '大阪');
+
+print shift @array;
+
+print "\n";
+foreach my $array (@array) {
+    print $array . "\n";
+}

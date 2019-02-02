@@ -1,0 +1,4 @@
+<?php
+for ($i = 1; $i <= $limit; $i++) {
+    echo $input_lines . "\n";
+}

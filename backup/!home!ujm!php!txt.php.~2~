@@ -1,0 +1,4 @@
+<?php
+
+$tweet = file_get_contents('tweet.txt', true);
+echo $tweet;

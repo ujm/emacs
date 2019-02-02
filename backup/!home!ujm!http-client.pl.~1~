@@ -1,0 +1,46 @@
+#!/usr/local/bin/perl -w
+2: 
+    3: # $Id: http-client.pl,v 1.3 2003/03/23 11:28:03 68user Exp $
+    4:                 
+  5: use strict;
+6: 
+  7: use Socket;     # Socket モジュールを使う
+8: 
+    9:                 # 接続先ホスト名
+  10: my $host = 'www.cs.gunma-u.ac.jp';
+11: 
+    12:                 # HTTP プロトコルを使う
+  13: my $port = getservbyname('http', 'tcp');
+14: 
+    15:                 # ホスト名を、IP アドレスの構造体に変換
+    16: my $iaddr = inet_aton($host)
+  17:         or die "$host は存在しないホストです。\n";
+18: 
+    19:                 # ポート番号と IP アドレスを構造体に変換
+  20: my $sock_addr = pack_sockaddr_in($port, $iaddr);
+21: 
+    22:                 # ソケット生成
+    23: socket(SOCKET, PF_INET, SOCK_STREAM, 0)
+  24:         or die "ソケットを生成できません。\n";
+25: 
+    26:                 # 指定のホストの指定のポートに接続
+    27: connect(SOCKET, $sock_addr)
+  28:         or die "$host のポート $portに接続できません。\n";
+29: 
+    30:                 # ファイルハンドル SOCKET をバッファリングしない
+  31: select(SOCKET); $|=1; select(STDOUT);
+32: 
+    33:                 # WWW サーバに HTTP リクエストを送る
+  34: print SOCKET "GET /index.html HTTP/1.0\r\n";
+35: print SOCKET "\r\n";
+36: 
+    37:                 # ヘッダ部分を受け取る
+  38: while (<SOCKET>){
+      39:                 # 改行のみの行ならループを抜ける
+    40:     m/^\r\n$/ and last;
+    41: }
+42: 
+    43:                 # ボディ部分を受け取り、表示
+  44: while (<SOCKET>){
+    45:     print $_;
+    46: }

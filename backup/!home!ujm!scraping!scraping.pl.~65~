@@ -1,0 +1,37 @@
+#!/usr/lib/perl
+
+use strict;
+use LWP::UserAgent;
+use HTML::TreeBuilder;
+use Data::Dumper;
+
+# 対象サイトの URL
+
+open(IN, "code.txt");
+my @data = <IN>;
+close(IN);
+foreach my $data (@data) {
+my $url = "http://stocks.finance.yahoo.co.jp/stocks/detail/?code=$data";
+
+# 対象サイトの HTML ソースを取得する
+my $ua = LWP::UserAgent->new();
+my $res = $ua->get($url);
+my $content = $res->content;
+
+# 取得した HTML ソースから必要な要素を取得する
+my $tree = HTML::TreeBuilder->new();
+$tree->parse($content);
+
+my $name = $tree->look_down('class', 'symbol');
+my $price = $tree->look_down('class', 'stoksPrice');
+
+print $name->as_text . "\n";
+}
+
+#my @value = ($name->as_text, $price->as_text);
+
+#open (OUT, ">>out_test.csv");
+
+#my $value = join(",", @value);
+
+#print OUT $value . "\n";

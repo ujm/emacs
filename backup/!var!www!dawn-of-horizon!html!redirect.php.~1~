@@ -1,0 +1,4 @@
+<?php
+
+$url = 'google.com';
+header("Location: {$url}");

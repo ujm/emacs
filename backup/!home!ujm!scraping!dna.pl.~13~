@@ -1,0 +1,51 @@
+#!/usr/bin/perl
+
+use strict;
+use Data::Dumper;
+
+my $popsize = 256;
+my $mut_rate = 0.01;
+my $min_fitness = 0.1;
+my $generation_count = 1000000;
+my $generation = 0;
+my $pop_ref = [];
+init_population($pop_ref, $popsize);
+
+do {
+    evaluate_fitness($pop_ref, \&fitness);
+
+    my @sorted_population = sort {$a->{fitness} <=> $b->{fitness}} @$pop_ref;
+    printf "generation %d, least fit DNA [%d], most fit DNA [%d]\n",
+      $generation,
+      scalar @sorted_population,
+      $sorted_population[0]->{dna},
+      $sorted_population[-1]->{dna};
+
+    survive($pop_ref, $min_fitness);
+    select_parents($pop_ref);
+
+    mutate($pop_ref, $mut_rate);
+} while ($generation++ < $generation_count);
+
+sub init_population {
+    my $population = shift @_;
+    my $pop_size = shift @_;
+
+    foreach my $id (1 .. $pop_size) {
+	push @$population, {dna => $id-1, survived => 1, parent => 0, fitness => 0};
+    }
+}
+
+sub evaluate_fitness {
+    my $population = shift @_;
+    my $fitness_function = shift @_;
+
+    foreach my $individual (@$population) {
+	$individual->{fitness} = $fitness_function->($individual->{dna});
+    }
+}
+
+sub survive {
+    my $population = shift @_;
+    my $min_fitness = shift @_;
+}

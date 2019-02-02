@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link type="text/css" href="css/style.css" rel="stylesheet">
+    <title>No Limit</title>
+  </head>
+  <body>
+    <h1>No Limit</h1>
+    <div id="nav">
+      <!--#include virtual="nav.html" -->
+    </div>
+    <div id="content">
+      <h2>概要</h2>
+      このページでは気になった楽曲の歌詞を掲載しています。
+    </div>
+  </body>
+</html>

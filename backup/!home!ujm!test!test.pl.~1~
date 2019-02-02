@@ -1,0 +1,10 @@
+#!/usr/bin/perl
+
+use strict;
+use LWP::UserAgent;
+
+while(<>) {
+  chomp;
+  my $url = $_;
+  print $url;
+}

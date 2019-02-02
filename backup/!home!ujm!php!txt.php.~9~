@@ -1,0 +1,6 @@
+<?php
+
+$tweet = file('tweet.txt', FILE_IGNORE_NEW_LINES);
+//$tweet = array_rand($tweet, 1);
+
+echo $tweet[0];

@@ -1,0 +1,14 @@
+#include <stdio.h>
+#define HL 150
+#define HU 180
+#define H_STEP 5
+#define WL 50
+#define WU 75
+#define W_STEP 5
+
+main() {
+  int height,weight;
+
+  putchar('\t');
+  
+}

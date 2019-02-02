@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+  char kamoku;
+  int ten;
+
+  printf("科目を入力してください(k:国語,s:数学):");
+  scanf("%c", &kamoku);
+
+  printf("点数を入力してください:");
+  scanf("%d", &ten);
+
+  if (kamoku == k) {
+    if (ten >= 73 && ten <= 100) {
+      printf("国語の点数は平均点以上です。\n");
+    }
+  }
+}

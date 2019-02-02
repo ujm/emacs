@@ -1,0 +1,11 @@
+#!/usr/bin/perl
+
+use strict;
+use Soket;
+
+my $host = 'www.cs.gunma-u.ac.jp';
+
+my $iaddr = inet_aton($host)
+    or die "$host は存在しないホストです。\n";
+
+print $iaddr;

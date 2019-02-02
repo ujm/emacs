@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link type="text/css" href="../../css/style.css" rel="stylesheet">
+</head>
+<body>
+  <h1 id="blog_head">ここにブログの見出しが入ります。</h1>
+  <div id="blog_main">
+    <p>ここから本文が始まります。</p>
+  </div>
+</body>
+</html>

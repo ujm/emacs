@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS Example</title>
+<style>
+p {
+color: red;
+}
+
+a {
+color: bleu;
+}
+</style>
+<body>
+<a>test</a>
+</body>
+</html>
