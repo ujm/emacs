@@ -14,21 +14,6 @@
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup")) version-control t)
 (put 'upcase-region 'disabled nil)
 
-(setq twittering-status-format "%S(%s),  %@:\n  %t // from %f%L %RT{retweeted by %S} \n")
-(setq twittering-oauth-access-token-alist
-'(("oauth_token" . "98530187-G8wO26LpX78bBZ5vc5mu5yV4XHqi8eOXUzyzESCYW")
- ("oauth_token_secret" . "UvVu16HgsGandD1UxJ1lrkOo7esDY4VPU32AVT2PpVM8F")
- ("user_id" . "98530187")
- ("screen_name" . "lll_ujm")))
-(add-hook 'twittering-mode-hook
-           (lambda ()
-             (mapc (lambda (pair)
-                     (let ((key (car pair))
-                           (func (cdr pair)))
-                       (define-key twittering-mode-map
-                         (read-kbd-macro key) func)))
-                   '(("R" . twittering-retweet)))))
-
 (require 'auto-save-buffers-enhanced)
 (setq auto-save-buffers-enhanced-interval 0.5)
 
