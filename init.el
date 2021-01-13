@@ -6,9 +6,14 @@
 (prefer-coding-system 'utf-8-unix)
 
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
-;(add-to-list 'package-archives  '("marmalade" . "http://marmalade-repo.org/packages/") t)
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
+
+(setq package-archives
+      '(("melpa" . "https://melpa.org/packages/")
+        ;; ("melpa-stable" . "https://stable.melpa.org/packages/")
+        ("org" . "https://orgmode.org/elpa/")
+        ("gnu" . "https://elpa.gnu.org/packages/")))
+
+;; 初期化
 (package-initialize)
 
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup")) version-control t)
