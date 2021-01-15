@@ -69,3 +69,34 @@ to@broadtech.co.jp" 0 "%d")) arg)))
 (setq indent-guide-delay 0.1)
 (setq indent-guide-recursive t)
 (add-hook 'prog-mode-hook 'indent-guide-mode)
+
+;;======================
+;; GO 言語のための設定==
+;;======================
+;; Goのパスを通す
+(add-to-list 'exec-path (expand-file-name "/usr/local/go/bin/"))
+;; go get で入れたツールのパスを通す
+(add-to-list 'exec-path (expand-file-name "~/work/go/bin/"))
+;; 必要なパッケージのロード
+(require 'go-mode)
+(require 'company-go)
+;; 諸々の有効化、設定
+(add-hook 'go-mode-hook 'company-mode)
+(add-hook 'go-mode-hook 'flycheck-mode)
+(add-hook 'go-mode-hook (lambda()
+           (add-hook 'before-save-hook' 'gofmt-before-save)
+           (local-set-key (kbd "M-.") 'godef-jump)
+           (set (make-local-variable 'company-backends) '(company-go))
+           (company-mode)
+           (setq indent-tabs-mode nil)
+           (setq c-basic-offset 4)
+           (setq tab-width 4)
+           ;; C-n, C-pで補完候補を次/前の候補を選択
+           (define-key company-active-map (kbd "C-n") 'company-select-next)
+           (define-key company-active-map (kbd "C-p") 'company-select-previous)
+           (setq company-selection-wrap-around t)
+           (setq company-idle-delay 0)
+))
+;;==============================
+;; GO 言語のための設定ここまで==
+;;==============================
