@@ -114,3 +114,26 @@ to@broadtech.co.jp" 0 "%d")) arg)))
 ;;============================
 ;;=org-capture の設定ここまで
 ;;============================
+
+;;============================
+;;=org-html-export-to-html の設定
+;;============================
+
+(defun my-org-replace-newline-and-remove-backslashes-from-headlines (backend)
+    "Add backslashes at the end of each line and remove them from headlines during HTML export."
+      (when (eq backend 'html)
+            ;; Add \\ at the end of each line
+                (goto-char (point-min))
+                    (while (not (eobp))
+                                 (goto-char (line-end-position))
+                                       (insert " \\\\")
+                                             (forward-line 1))
+                        ;; Remove \\ from the end of lines starting with * or **
+                            (goto-char (point-min))
+                                (while (re-search-forward "^\\*+ .* \\\\\\\\$" nil t)
+                                             (replace-match (replace-regexp-in-string " \\\\\\\\$" "" (match-string 0)) nil t))))
+
+(add-hook 'org-export-before-processing-hook 'my-org-replace-newline-and-remove-backslashes-from-headlines)
+;;============================
+;;=org-html-export-to-html の設定ここまで
+;;============================
